@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb035a5eba149259da9c2d0129d5725, type: 3}
+  m_Name: UIData
+  m_EditorClassIdentifier: 
+  TopResourcePanelView: {fileID: 7386643466000220896, guid: b8c240ec53998fb40b31ec3226d8c260,
+    type: 3}
+  _resIconTopStep: 92
+  BottomPanelView: {fileID: 1183486761244090343, guid: 10f806030ed564547a0dcd5659fcdef5,
+    type: 3}
+  BuildPanelView: {fileID: 5001474740615306625, guid: f8a3ff8f3481c8946bcec610849d2481,
+    type: 3}
+  OneColonistIcon: {fileID: 21300000, guid: c328cf85e77f32c428ceaacf66accb35, type: 3}
+  TenColonistsIcon: {fileID: 21300000, guid: 449da416c12e6fd4281a11745ad89b88, type: 3}
+  EnergyIcon: {fileID: 21300000, guid: d28a21d78ec5dbc44b0b7964a81264a5, type: 3}
+  _resIconBuildStep: 92
+  ResTopElement: {fileID: 477542531844623778, guid: b2f031b1a2351c54898cdac3b9bcde6f,
+    type: 3}
+  _resourcesFolder: ResConfigs
+  TaskPanelView: {fileID: 6082343264563799348, guid: d56148b93b67bc04eaea52094ebdc20e,
+    type: 3}
