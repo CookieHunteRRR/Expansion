@@ -18,7 +18,7 @@ namespace Code.Controller
             var inputInitialization = new InputInitialization(_unionData.InputConfig);
             var inputController = new InputController(inputInitialization);
 
-            var planetSurface = Object.Instantiate(_unionData.BuildingsConfig.Terrain, new Vector3(0.0f,-0.5f, 0.0f), Quaternion.identity);
+            var planetSurface = Object.Instantiate(_unionData.BuildingsConfig.Terrain, new Vector3(0.0f,0.0f, 0.0f), Quaternion.identity);
             var terrain = planetSurface.GetComponent<Terrain>();
             var surfaceGrid = new Vector2Int((int) terrain.terrainData.size.x, (int) terrain.terrainData.size.z);
 

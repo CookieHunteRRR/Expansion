@@ -75,7 +75,7 @@ namespace Code.Controller
                 if (available && IsPlaceTaken(x, y)) 
                     available = false;
 
-                _flyingBuilding.position = new Vector3(x, 0, y);
+                _flyingBuilding.position = new Vector3(x, 0.5f, y);
                 _flyingBuildingColoring.SetTransparent(available);
 
                 if (available && Input.GetMouseButtonDown(0))
