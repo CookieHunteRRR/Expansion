@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0a4f3a661541cc8f62758651a366d6, type: 3}
   m_Name: RegolithResConfig
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 5354517e94444a641a40c1a71d616b0d, type: 3}
   _type: 9
   _startCount: 4
