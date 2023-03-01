@@ -17,6 +17,7 @@ MonoBehaviour:
   _type: 1
   _name: "\u0421\u0438\u043D\u0438\u0439"
   _description: "\u0421\u0438\u043D\u0435\u0435 \u0437\u0434\u0430\u043D\u0438\u0435"
+  _size: {x: 1, y: 1}
   _requiredResources:
   - Type: 1
     Amount: 1

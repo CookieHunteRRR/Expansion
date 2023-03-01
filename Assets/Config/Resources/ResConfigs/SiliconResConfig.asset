@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0a4f3a661541cc8f62758651a366d6, type: 3}
   m_Name: SiliconResConfig
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: c83745f90c3757a4383844b65c23760e, type: 3}
   _type: 13
   _startCount: 55

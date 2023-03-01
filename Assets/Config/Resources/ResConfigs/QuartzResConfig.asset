@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0a4f3a661541cc8f62758651a366d6, type: 3}
   m_Name: QuartzResConfig
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 6d8047c4324280e4d90fa1c370038d0e, type: 3}
   _type: 6
   _startCount: 77
