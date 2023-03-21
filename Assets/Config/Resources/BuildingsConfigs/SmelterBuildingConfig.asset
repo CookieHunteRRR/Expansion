@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fe7ac1a97143a18e23a326b0164654, type: 3}
+  m_Name: SmelterBuildingConfig
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 3397629467609061798, guid: 196e6cb3bbf8f484ba387278edeff685, type: 3}
+  Icon: {fileID: 0}
+  _type: 0
+  _name: Smelter
+  _description: A plant for the melting of resources
+  _size: {x: 9, y: 8}
+  _requiredResources:
+  - Type: 9
+    Amount: 1
+  _minWorkerAmount: 0
+  _maxWorkerAmount: 5
+  _energyPerPerson: 1
+  _energyForUpkeep: 1

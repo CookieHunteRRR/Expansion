@@ -6,11 +6,10 @@ namespace Code.Configs
     [CreateAssetMenu(fileName = "InputSettings", menuName = "Data/InputSettings", order = 0)]
     public sealed class InputConfig : ScriptableObject
     {
-        public string MouseLeftInput = KeyCode.Mouse0.ToString();
-        // public string Horizontal = "Horizontal";
-        // public string Vertical = "Vertical";
-        // public string Jump = "Jump";
-        // public string Work = "Work";
-        
+        public string MouseLeftInput = "MouseButtonLeft";
+        public string MouseRightInput = "MouseButtonRight";
+        public string MouseScrollWheel = "Mouse ScrollWheel";
+        public string Horizontal = "Horizontal";
+        public string Vertical = "Vertical";
     }
 }

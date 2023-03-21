@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260a7960c02845aba976d8ccadb9924e, type: 3}
   m_Name: BuildingSettings
   m_EditorClassIdentifier: 
-  Terrain: {fileID: 6053480225910113636, guid: 9f1bf95f73a786044ab597dca5b0f5ba, type: 3}
+  Terrain: {fileID: 7433262150015704296, guid: a8b35447424d78b41a79a1981bd573eb, type: 3}
   _buildingsConfigsFolder: BuildingsConfigs
   _freePlaceColor: {r: 0, g: 1, b: 0, a: 1}
   _busyPlaceColor: {r: 1, g: 0, b: 0, a: 1}
