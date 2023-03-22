@@ -1,4 +1,4 @@
-Shader "Expansion/Terrain"
+Shader "Nature/TerrainMars"
 {
     Properties
     {

@@ -20,6 +20,7 @@
             <e p="BuildingConfig.cs" t="Include" />
             <e p="BuildingSettings.cs" t="Include" />
             <e p="BuildingsType.cs" t="Include" />
+            <e p="CameraSettings.cs" t="Include" />
             <e p="InputConfig.cs" t="Include" />
             <e p="RequiredResourceProperties.cs" t="Include" />
             <e p="ResourceConfig.cs" t="Include" />
@@ -29,7 +30,9 @@
           </e>
           <e p="Controller" t="Include">
             <e p="BuildingsGridController.cs" t="Include" />
+            <e p="CameraController.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
+            <e p="PlanetSurfaceController.cs" t="Include" />
             <e p="StartController.cs" t="Include" />
             <e p="ViewController.cs" t="Include" />
           </e>
@@ -61,6 +64,9 @@
             <e p="BuildPanelViewHandler.cs" t="Include" />
             <e p="ResourcesIconElementViewHandler.cs" t="Include" />
           </e>
+        </e>
+        <e p="Shader" t="Include">
+          <e p="Surface.shader" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
