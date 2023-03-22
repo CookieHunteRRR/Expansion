@@ -15,22 +15,21 @@ namespace Code.Controller
             _controllers = new Controllers();
             var camera = Camera.main;
 
-            var inputInitialization = new InputInitialization(_unionData.InputConfig);
-            var inputController = new InputController(inputInitialization);
+            var input = new InputInitialization(_unionData.InputConfig);
+            var inputController = new InputController(input);
 
-            var planetSurface = Object.Instantiate(_unionData.BuildingsConfig.Terrain, new Vector3(0.0f, 0.0f, 0.0f),
-                Quaternion.identity);
-            var terrain = planetSurface.GetComponent<Terrain>();
-            var surfaceGrid = new Vector2Int((int) terrain.terrainData.size.x, (int) terrain.terrainData.size.z);
+            var surfaceController = new PlanetSurfaceController(_unionData.BuildingsConfig);
 
-            
-            
+            var cameraController = new CameraController(camera, _unionData.CameraConfig, input,
+                surfaceController.GetSurfaceGridSize(), surfaceController.GetTerrainID);
+
             var viewController = new ViewController(_unionData.UIConfig, _unionData);
 
-            var gridController = new BuildingsGridController(surfaceGrid, camera, viewController.BuildingViewHandler,
-                _unionData, inputInitialization.InputMouseLeft);
+            var gridController = new BuildingsGridController(surfaceController.GetSurfaceGridSize(), camera,
+                viewController.BuildingViewHandler, _unionData, input.InputMouseLeft, input.InputMouseRight);
 
             _controllers.Add(inputController);
+            _controllers.Add(cameraController);
             //_controllers.Add(viewController);
             _controllers.Add(gridController);
         }
@@ -43,7 +42,6 @@ namespace Code.Controller
         private void Update()
         {
             _controllers.Execute();
-            
         }
 
         private void FixedUpdate()

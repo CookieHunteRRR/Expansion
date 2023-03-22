@@ -13,6 +13,9 @@ namespace Code.Building
 
         private void OnDrawGizmos()
         {
+            int deltaX = Size.x / 2;
+            int deltaY = Size.y / 2;
+            
             for (int x = 0; x < Size.x; x++)
             {
                 for (int y = 0; y < Size.y; y++)
@@ -22,7 +25,7 @@ namespace Code.Building
                     else
                         Gizmos.color = new Color(1f, 0.68f, 0f, 0.3f);
 
-                    Gizmos.DrawCube(transform.position + new Vector3(x, 0.5f, y), new Vector3(1.0f, 1.0f, 1.0f));
+                    Gizmos.DrawCube(transform.position + new Vector3(x - deltaX, 0.5f, y - deltaY), new Vector3(1.0f, 1.0f, 1.0f));
                 }
             }
         }
