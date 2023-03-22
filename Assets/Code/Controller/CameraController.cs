@@ -49,10 +49,6 @@ namespace Code.Controller
             _scrollWheelInputProxy = input.InputMouseScrollWheel;
             _surfaceSize = surfaceSize;
             _terrainID = terrainID;
-            var position = _cameraTransform.position;
-            _radius = Mathf.Sqrt(position.x * position.x + (position.z + 15.0f) * (position.z + 15.0f));
-            Debug.Log(_radius);
-            Debug.Log(Screen.height / 2);
         }
 
         public void Initialize()
