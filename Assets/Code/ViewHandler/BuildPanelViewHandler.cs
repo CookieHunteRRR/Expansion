@@ -64,6 +64,7 @@ namespace Code.ViewHandler
         private void GetBuilding(int buttonID)
         {
             Debug.Log(_allBuildings[_buildingsCompliance[buttonID]].Name);
+            _buildPanelView.gameObject.SetActive(false);
             OnBuildingCreate?.Invoke(_buildingsCompliance[buttonID]);
         }
 

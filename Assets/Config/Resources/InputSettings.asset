@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ad987f95e04e6db44e8aad0007996d, type: 3}
   m_Name: InputSettings
   m_EditorClassIdentifier: 
-  MouseLeftInput: Mouse X
+  MouseLeftInput: MouseButtonLeft
+  MouseRightInput: MouseButtonRight
+  MouseScrollWheel: Mouse ScrollWheel
+  Horizontal: Horizontal
+  Vertical: Vertical
