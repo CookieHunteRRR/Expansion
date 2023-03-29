@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fe7ac1a97143a18e23a326b0164654, type: 3}
   m_Name: SmelterBuildingConfig
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3397629467609061798, guid: 196e6cb3bbf8f484ba387278edeff685, type: 3}
+  Prefab: {fileID: 138480037517301795, guid: 5bf4f8d9733e28144a39114bce7d43da, type: 3}
   Icon: {fileID: 0}
   _type: 0
   _name: Smelter

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: CameraSettings
   m_EditorClassIdentifier: 
   StartPosition: {fileID: 8578973837537040631, guid: 7b68d9bb19177d44aa4615c448f5ce71, type: 3}
-  _moveSpeed: 5
-  _approachSpeed: 30
-  _rotationSpeed: 20
+  _moveSpeed: 300
+  _approachSpeed: 60
+  _rotationSpeed: 100
   _dragAndDropSpeed: 10
   _movingThresh: 0.01
   _bordersSize: 30
-  _maxClose: 4
-  _maxFar: 45
+  _maxClose: 15
+  _maxFar: 65
