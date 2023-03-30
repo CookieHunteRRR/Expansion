@@ -9,7 +9,7 @@ namespace Code.Controller
 
         public PlanetSurfaceController(BuildingSettings config)
         {
-            var planetSurface = Object.Instantiate(config.Terrain, new Vector3(0.0f, 0.0f, 0.0f),
+            var planetSurface = Object.Instantiate(config.Terrain, new Vector3(0.0f, -387.0f, 0.0f),
                 Quaternion.identity);
             _terrain = planetSurface.GetComponent<Terrain>();
         }
