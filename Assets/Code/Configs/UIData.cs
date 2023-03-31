@@ -27,6 +27,12 @@ namespace Code.Configs
 
         [Header("Task panel settings")] 
         public Transform TaskPanelView;
+        public Transform TaskPanelButtonView;
+        [SerializeField] private int _secondsUntilClosed = 1;
+        [SerializeField] private string _firstTaskName = "Построить водородную электростанцию";
+        [SerializeField] private string _firstTaskDesc = "Титан 0/20\nКремний 3/10";
+        [SerializeField] private string _secondTaskName = "Построить химическую лабораторию";
+        [SerializeField] private string _secondTaskDesc = "Титан 0/10\nКварц 8/20\nЭлектронные компоненты 1/5";
 
         private Canvas _canvas;
         private ResourceConfig[] _resourcesConfigs;
@@ -39,7 +45,7 @@ namespace Code.Configs
                 {
                     _canvas = Object.FindObjectOfType<Canvas>();
                 }
-
+                
                 return _canvas;
             }
         }
@@ -56,5 +62,11 @@ namespace Code.Configs
         public float ResIconBuildStep => _resIconBuildStep;
 
         public float ResIconTopStep => _resIconTopStep;
+
+        public int SecondsUntilTaskPanelClosed => _secondsUntilClosed;
+        public string FirstTaskName => _firstTaskName;
+        public string FirstTaskDesc => _firstTaskDesc;
+        public string SecondTaskName => _secondTaskName;
+        public string SecondTaskDesc => _secondTaskDesc;
     }
 }

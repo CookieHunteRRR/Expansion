@@ -1,3 +1,19 @@
-﻿fileFormatVersion: 2
+fileFormatVersion: 2
 guid: 1bb035a5eba149259da9c2d0129d5725
-timeCreated: 1672216370
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TopResourcePanelView: {instanceID: 0}
+  - BottomPanelView: {instanceID: 0}
+  - BuildPanelView: {instanceID: 0}
+  - OneColonistIcon: {instanceID: 0}
+  - TenColonistsIcon: {instanceID: 0}
+  - EnergyIcon: {instanceID: 0}
+  - ResTopElement: {instanceID: 0}
+  - TaskPanelView: {fileID: 6082343264563799348, guid: d56148b93b67bc04eaea52094ebdc20e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

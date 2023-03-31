@@ -17,19 +17,19 @@ namespace Code.Controller
             
             var inputInitialization = new InputInitialization(_unionData.InputConfig);
             var inputController = new InputController(inputInitialization);
-
+            
             var planetSurface = Object.Instantiate(_unionData.BuildingsConfig.Terrain, new Vector3(0.0f,0.0f, 0.0f), Quaternion.identity);
             var terrain = planetSurface.GetComponent<Terrain>();
             var surfaceGrid = new Vector2Int((int) terrain.terrainData.size.x, (int) terrain.terrainData.size.z);
-
             
             var viewController = new ViewController(_unionData.UIConfig, _unionData);
-
             var gridController = new BuildingsGridController(surfaceGrid, camera, viewController.BuildingViewHandler, _unionData);
+            var taskPanelController = new TaskPanelController(_unionData.UIConfig);
 
             _controllers.Add(inputController);
             //_controllers.Add(viewController);
             _controllers.Add(gridController);
+            _controllers.Add(taskPanelController);
         }
 
         private void Start()
