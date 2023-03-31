@@ -9,12 +9,13 @@ namespace Code.Configs
         [SerializeField] private string _inputConfigPath = "InputSettings";
         [SerializeField] private string _uiConfigPath = "UIData";
         [SerializeField] private string _buildingsConfigPath = "BuildingsSettings";
+        [SerializeField] private string _cameraConfigPath = "CameraSettings";
 
         private InputConfig _inputConfig;
         private UIData _uiData;
         private BuildingSettings _buildingSettings;
-
-
+        private CameraSettings _cameraSettings;
+        
         public InputConfig InputConfig
         {
             get
@@ -51,6 +52,19 @@ namespace Code.Configs
                 }
 
                 return _buildingSettings;
+            }
+        }
+        
+        public CameraSettings CameraConfig
+        {
+            get
+            {
+                if (_cameraSettings == null)
+                {
+                    _cameraSettings = Assistant.Load<CameraSettings>(_cameraConfigPath);
+                }
+
+                return _cameraSettings;
             }
         }
     }

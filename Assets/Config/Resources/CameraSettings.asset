@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f44a37daa641c3aa378aa1f396c96e, type: 3}
+  m_Name: CameraSettings
+  m_EditorClassIdentifier: 
+  StartPosition: {fileID: 8578973837537040631, guid: 7b68d9bb19177d44aa4615c448f5ce71, type: 3}
+  _moveSpeed: 300
+  _approachSpeed: 60
+  _rotationSpeed: 100
+  _dragAndDropSpeed: 10
+  _movingThresh: 0.01
+  _bordersSize: 30
+  _maxClose: 15
+  _maxFar: 65

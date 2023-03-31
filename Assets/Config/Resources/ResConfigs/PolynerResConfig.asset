@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0a4f3a661541cc8f62758651a366d6, type: 3}
   m_Name: PolynerResConfig
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 09190c377bad11b48981681c8a42406d, type: 3}
   _type: 5
-  _startCount: 0
+  _startCount: 8

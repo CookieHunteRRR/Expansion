@@ -9,7 +9,7 @@ namespace Code.Building
 
         public BuildingColoring(Transform building, Vector2Int size)
         {
-            _buildingRenderer = building.GetComponent<Renderer>();
+            _buildingRenderer = building.gameObject.GetComponentInChildren<Renderer>();
             building.gameObject.GetOrAddComponent<DrawGrid>().Init(size);
         }
 

@@ -14,19 +14,21 @@ namespace Code.Controller
         {
             _controllers = new Controllers();
             var camera = Camera.main;
-            
-            var inputInitialization = new InputInitialization(_unionData.InputConfig);
-            var inputController = new InputController(inputInitialization);
-            
-            var planetSurface = Object.Instantiate(_unionData.BuildingsConfig.Terrain, new Vector3(0.0f,0.0f, 0.0f), Quaternion.identity);
-            var terrain = planetSurface.GetComponent<Terrain>();
-            var surfaceGrid = new Vector2Int((int) terrain.terrainData.size.x, (int) terrain.terrainData.size.z);
-            
+
+            var input = new InputInitialization(_unionData.InputConfig);
+            var inputController = new InputController(input);
+
+            var surfaceController = new PlanetSurfaceController(_unionData.BuildingsConfig);
+
+            var cameraController = new CameraController(camera, _unionData.CameraConfig, input,
+                surfaceController.GetSurfaceGridSize(), surfaceController.GetTerrainID);
             var viewController = new ViewController(_unionData.UIConfig, _unionData);
-            var gridController = new BuildingsGridController(surfaceGrid, camera, viewController.BuildingViewHandler, _unionData);
-            var taskPanelController = new TaskPanelController(_unionData.UIConfig);
+
+            var gridController = new BuildingsGridController(surfaceController.GetSurfaceGridSize(), camera,
+                viewController.BuildingViewHandler, _unionData, input.InputMouseLeft, input.InputMouseRight);
 
             _controllers.Add(inputController);
+            _controllers.Add(cameraController);
             //_controllers.Add(viewController);
             _controllers.Add(gridController);
             _controllers.Add(taskPanelController);
@@ -37,7 +39,6 @@ namespace Code.Controller
             _controllers.Initialize();
         }
 
-
         private void Update()
         {
             _controllers.Execute();
@@ -47,166 +48,5 @@ namespace Code.Controller
         {
             _controllers.FixedExecute();
         }
-
-        private void OnDestroy()
-        {
-            _controllers.Cleanup();
-        }
     }
-
-    //
-    // public class Building : MonoBehaviour
-    // {
-    //     #region Field
-    //
-    //     public Renderer MainRenderer;
-    //     public Vector2Int Size = Vector2Int.one;
-    //
-    //     #endregion
-    //
-    //
-    //     #region UnityMethods
-    //
-    //     private void OnDrawGizmos()
-    //     {
-    //         for (int x = 0; x < Size.x; x++)
-    //         {
-    //             for (int y = 0; y < Size.y; y++)
-    //             {
-    //                 if ((x + y) % 2 == 0)
-    //                     Gizmos.color = new Color(0.88f, 0f, 1f, 0.3f);
-    //                 else
-    //                     Gizmos.color = new Color(1f, 0.68f, 0f, 0.3f);
-    //
-    //                 Gizmos.DrawCube(transform.position + new Vector3(x, 0, y), new Vector3(1, 1f, 1));
-    //             }
-    //         }
-    //     }
-    //
-    //     #endregion
-    //
-    //
-    //     #region Methods
-    //
-    //     public void SetTransparent(bool available)
-    //     {
-    //         if (available)
-    //         {
-    //             MainRenderer.material.color = Color.green;
-    //         }
-    //         else
-    //         {
-    //             MainRenderer.material.color = Color.red;
-    //         }
-    //     }
-    //
-    //     public void SetNormal()
-    //     {
-    //         MainRenderer.material.color = Color.white;
-    //     }
-    //
-    //     #endregion
-    // }
-    //
-    // public class BuildingsGrid : MonoBehaviour
-    // {
-    //     #region Field
-    //
-    //     public Vector2Int GridSize = new Vector2Int(20, 10);
-    //
-    //     private Building[,] _grid;
-    //     private Building _flyingBuilding;
-    //     private Camera _mainCamera;
-    //
-    //     #endregion
-    //
-    //
-    //     #region UnityMethods
-    //
-    //     private void Awake()
-    //     {
-    //         _grid = new Building[GridSize.x, GridSize.y];
-    //         _mainCamera = Camera.main;
-    //     }
-    //
-    //     private void Update()
-    //     {
-    //         if (_flyingBuilding != null)
-    //             CreateBuilding();
-    //     }
-    //
-    //     #endregion
-    //
-    //
-    //     #region Methods
-    //
-    //     public void StartPlacingBuilding(Building buildingPrefab)
-    //     {
-    //         if (_flyingBuilding != null)
-    //         {
-    //             Destroy(_flyingBuilding.gameObject);
-    //         }
-    //
-    //         _flyingBuilding = Instantiate(buildingPrefab);
-    //     }
-    //
-    //     private void CreateBuilding()
-    //     {
-    //         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-    //         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-    //
-    //         if (groundPlane.Raycast(ray, out float position))
-    //         {
-    //             Vector3 worldPosition = ray.GetPoint(position);
-    //
-    //             int x = Mathf.RoundToInt(worldPosition.x);
-    //             int y = Mathf.RoundToInt(worldPosition.z);
-    //
-    //             bool available = true;
-    //
-    //             if (x < 0 || x > GridSize.x - _flyingBuilding.Size.x) available = false;
-    //             if (y < 0 || y > GridSize.y - _flyingBuilding.Size.y) available = false;
-    //
-    //             if (available && IsPlaceTaken(x, y)) available = false;
-    //
-    //             _flyingBuilding.transform.position = new Vector3(x, 0, y);
-    //             _flyingBuilding.SetTransparent(available);
-    //
-    //             if (available && Input.GetMouseButtonDown(0))
-    //             {
-    //                 PlaceFlyingBuilding(x, y);
-    //             }
-    //         }
-    //     }
-    //
-    //     private void PlaceFlyingBuilding(int placeX, int placeY)
-    //     {
-    //         for (int x = 0; x < _flyingBuilding.Size.x; x++)
-    //         {
-    //             for (int y = 0; y < _flyingBuilding.Size.y; y++)
-    //             {
-    //                 _grid[placeX + x, placeY + y] = _flyingBuilding;
-    //             }
-    //         }
-    //
-    //         _flyingBuilding.SetNormal();
-    //         _flyingBuilding = null;
-    //     }
-    //
-    //     private bool IsPlaceTaken(int placeX, int placeY)
-    //     {
-    //         for (int x = 0; x < _flyingBuilding.Size.x; x++)
-    //         {
-    //             for (int y = 0; y < _flyingBuilding.Size.y; y++)
-    //             {
-    //                 if (_grid[placeX + x, placeY + y] != null)
-    //                     return true;
-    //             }
-    //         }
-    //
-    //         return false;
-    //     }
-    //
-    //     #endregion
-    // }
 }
